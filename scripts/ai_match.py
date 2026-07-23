@@ -2,12 +2,22 @@
 
 设计原则：LLM 负责"多约束推理+个性化解释"，规则层负责"合规红线+合理性校验"。
 LLM 输出不可全信，必须有规则校验兜底（防止越界推荐理财型、漏掉高龄劝退等）。
+本文件可被 advisor.py import 复用。
 """
 import json
 import os
+import re
 from openai import OpenAI
 
-client = OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
+_client = None
+
+
+def _get_client():
+    global _client
+    if _client is None:
+        _client = OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
+    return _client
+
 
 SYSTEM = """你是保险决策辅助工具。基于用户画像，推荐适合的健康保障险种组合。
 严格合规：
@@ -28,7 +38,7 @@ WARN_KEYWORDS = ["保费倒挂", "劝退", "放弃重疾", "不建议.*重疾", 
 
 
 def recommend(profile):
-    resp = client.chat.completions.create(
+    resp = _get_client().chat.completions.create(
         model="deepseek-chat",
         messages=[
             {"role": "system", "content": SYSTEM},
@@ -53,7 +63,6 @@ def validate(raw, profile):
     recs = data.get("recommendations", [])
     notes = data.get("notes", "")
 
-    # 1) 险种白名单过滤 + 去重（同险种保留优先级最高）
     seen = {}
     dropped = []
     for r in recs:
@@ -61,17 +70,13 @@ def validate(raw, profile):
         if t not in ALLOWED_TYPES:
             dropped.append(t)
             continue
-        # 重疾形态合规
         if t == "重疾险":
             form = r.get("form", "")
             if form and form not in ALLOWED_CI_FORMS:
                 r["form"] = "消费型"
                 warnings.append(f"重疾形态'{form}'不合规，已重置为消费型")
-        # 去重
         if t in seen:
-            old_pri = PRIORITY_RANK.get(seen[t].get("priority", "中"), 1)
-            new_pri = PRIORITY_RANK.get(r.get("priority", "中"), 1)
-            if new_pri < old_pri:
+            if PRIORITY_RANK.get(r.get("priority", "中"), 1) < PRIORITY_RANK.get(seen[t].get("priority", "中"), 1):
                 seen[t] = r
         else:
             seen[t] = r
@@ -79,10 +84,8 @@ def validate(raw, profile):
         warnings.append(f"过滤越界险种: {dropped}")
     clean_recs = list(seen.values())
 
-    # 2) 高龄重疾劝退校验（age>=45 且含重疾，必须 notes 有劝退提示）
     age = profile.get("age", 0)
     has_ci = any(r["insurance_type"] == "重疾险" for r in clean_recs)
-    import re
     if age >= 45 and has_ci:
         if not any(re.search(k, notes) for k in WARN_KEYWORDS):
             notes = ("【规则校验补充】该年龄段({}岁)重疾险存在保费倒挂风险，"
@@ -95,31 +98,22 @@ def validate(raw, profile):
     return data, warnings
 
 
-profiles = [
-    {"name": "24岁应届生", "age": 24, "income": "低(应届月薪8k)",
-     "family": "单身", "health": "健康", "budget": "2000元/年"},
-    {"name": "38岁家庭支柱(小姨画像)", "age": 38, "income": "中高(银行工作)",
-     "family": "已婚有孩", "health": "亚健康(长期高压)", "budget": "10000元/年"},
-    {"name": "55岁中年", "age": 55, "income": "中",
-     "family": "已婚孩子成年", "health": "有高血压慢性病", "budget": "5000元/年"},
-]
-results = []
-for p in profiles:
-    try:
-        raw = recommend(p)
-        validated, warns = validate(raw, p)
-        results.append({"profile": p, "result": validated, "raw_llm": raw if isinstance(raw, str) else None})
-    except Exception as e:
-        results.append({"profile": p, "error": str(e)})
-
-with open("insurance/data/ai_match_demo.json", "w", encoding="utf-8") as f:
-    json.dump(results, f, ensure_ascii=False, indent=2)
-print("done, profiles:", len(results))
-for r in results:
-    if "result" in r and r["result"]:
-        recs = r["result"].get("recommendations", [])
-        types = [x.get("insurance_type", "") for x in recs]
-        w = r["result"].get("_validation_warnings", [])
-        print(f"  {r['profile']['name']}: {len(recs)}项 -> {types} | warns:{len(w)}")
-    else:
-        print(f"  {r['profile']['name']}: ERROR {r.get('error')}")
+if __name__ == "__main__":
+    profiles = [
+        {"name": "24岁应届生", "age": 24, "income": "低(应届月薪8k)",
+         "family": "单身", "health": "健康", "budget": "2000元/年"},
+        {"name": "38岁家庭支柱(小姨画像)", "age": 38, "income": "中高(银行工作)",
+         "family": "已婚有孩", "health": "亚健康(长期高压)", "budget": "10000元/年"},
+        {"name": "55岁中年", "age": 55, "income": "中",
+         "family": "已婚孩子成年", "health": "有高血压慢性病", "budget": "5000元/年"},
+    ]
+    results = []
+    for p in profiles:
+        try:
+            validated, warns = validate(recommend(p), p)
+            results.append({"profile": p, "result": validated})
+        except Exception as e:
+            results.append({"profile": p, "error": str(e)})
+    with open("insurance/data/ai_match_demo.json", "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    print("done, profiles:", len(results))

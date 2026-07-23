@@ -60,15 +60,19 @@ insurance/
 ├── .gitignore
 ├── scripts/                  # 采集/抽取/分析/AI 脚本
 │   ├── fetch_quarterly.py     #   Playwright 采集通报
-│   ├── extract_to_db.py       #   正则抽取 + 入库
+│   ├── extract_to_db.py       #   混合抽取(正则+LLM兜底)入库
+│   ├── extract_products.py    #   LLM 条款要素抽取
 │   ├── analyze.py             #   SQL 洞察
-│   ├── visualize.py           #   Plotly 看板
-│   └── ai_match.py            #   LLM 险种推荐
+│   ├── visualize.py           #   Plotly 看板(纯sqlite3)
+│   ├── ai_match.py            #   LLM 险种推荐 + 规则校验
+│   └── advisor.py             #   端到端顾问(画像→推荐→匹配→投诉关联)
 └── data/
-    ├── complaints.db          # SQLite 投诉数据(160条)
+    ├── complaints.db          # SQLite 投诉数据(200条) + products表
     ├── schema.sql             # 数据模型
     ├── analysis_report.md     # 分析报告
-    └── dashboard.html         # 交互看板
+    ├── dashboard.html         # 交互看板
+    ├── products_extracted.json # LLM抽取的产品要素
+    └── advisor_demo.json      # 端到端方案示例
 ```
 
 ## 运行
@@ -83,11 +87,13 @@ playwright install chromium
 $env:DEEPSEEK_API_KEY="your_key"
 
 # 流程
-python scripts/fetch_quarterly.py    # 采集
-python scripts/extract_to_db.py      # 抽取入库
-python scripts/analyze.py            # 分析
-python scripts/visualize.py          # 看板
-python scripts/ai_match.py           # AI 匹配
+python scripts/fetch_quarterly.py    # 1. 采集通报
+python scripts/extract_to_db.py      # 2. 混合抽取入库(正则+LLM兜底)
+python scripts/extract_products.py   # 3. LLM 条款要素抽取入库
+python scripts/analyze.py            # 4. SQL 洞察
+python scripts/visualize.py          # 5. 看板
+python scripts/ai_match.py           # 6. AI 险种推荐(校验)
+python scripts/advisor.py            # 7. 端到端顾问(集成)
 ```
 
 ## 技术栈

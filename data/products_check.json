@@ -1,0 +1,32 @@
+[
+  {
+    "product_name": "超级玛丽（互联网消费型重疾）",
+    "company": "君龙人寿",
+    "form": "消费型",
+    "death": "可选",
+    "waiting_period": "180天",
+    "health_notice": "宽松",
+    "returnable": "否",
+    "key_risk": "身故责任可选，若不含身故则仅退现金价值，可能低于已交保费"
+  },
+  {
+    "product_name": "达尔文（互联网消费型重疾）",
+    "company": "瑞华健康",
+    "form": "消费型",
+    "death": "可选",
+    "waiting_period": "180天",
+    "health_notice": "中等",
+    "returnable": "否",
+    "key_risk": "癌症多次赔付间隔期3年较长，需关注"
+  },
+  {
+    "product_name": "平安福（储蓄型重疾）",
+    "company": "平安人寿",
+    "form": "储蓄型",
+    "death": "必选",
+    "waiting_period": "90天",
+    "health_notice": "中等",
+    "returnable": "否",
+    "key_risk": "身故责任为必选，保费较高，需确认是否覆盖自身需求"
+  }
+]

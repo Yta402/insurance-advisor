@@ -1,0 +1,119 @@
+[
+  {
+    "profile": {
+      "name": "24岁应届生",
+      "age": 24,
+      "income": "低(应届月薪8k)",
+      "family": "单身",
+      "health": "健康",
+      "budget": "2000元/年"
+    },
+    "result": {
+      "recommendations": [
+        {
+          "insurance_type": "百万医疗险",
+          "form": "消费型",
+          "reason": "应对大病住院高额医疗费，保费低、保额高，适合预算有限的年轻人",
+          "sum_insured_range": "100万-400万",
+          "priority": "高",
+          "annual_budget": "200-400元"
+        },
+        {
+          "insurance_type": "意外险",
+          "form": "消费型",
+          "reason": "覆盖意外身故/伤残及医疗，年轻人活动多，意外风险需防范",
+          "sum_insured_range": "50万-100万",
+          "priority": "高",
+          "annual_budget": "100-300元"
+        },
+        {
+          "insurance_type": "重疾险",
+          "form": "消费型",
+          "reason": "确诊即赔，弥补收入损失，24岁投保费率低，建议配置基础保额",
+          "sum_insured_range": "30万-50万",
+          "priority": "中",
+          "annual_budget": "1000-2000元"
+        }
+      ],
+      "notes": "总预算2000元/年，优先百万医疗和意外险，剩余预算可配置消费型重疾险。储蓄型或返还型重疾险保费较高，暂不建议。"
+    }
+  },
+  {
+    "profile": {
+      "name": "38岁家庭支柱(小姨画像)",
+      "age": 38,
+      "income": "中高(银行工作)",
+      "family": "已婚有孩",
+      "health": "亚健康(长期高压)",
+      "budget": "10000元/年"
+    },
+    "result": {
+      "recommendations": [
+        {
+          "insurance_type": "重疾险",
+          "form": "消费型",
+          "reason": "38岁家庭支柱，收入中高，重疾风险需覆盖收入损失和康复费用，消费型性价比高，避免保费倒挂。",
+          "sum_insured_range": "30万-50万",
+          "priority": "高",
+          "annual_budget": "4000-6000元"
+        },
+        {
+          "insurance_type": "百万医疗险",
+          "form": "",
+          "reason": "亚健康状态，百万医疗险可覆盖大额医疗支出，补充社保不足，杠杆高。",
+          "sum_insured_range": "200万-400万",
+          "priority": "高",
+          "annual_budget": "300-800元"
+        },
+        {
+          "insurance_type": "意外险",
+          "form": "",
+          "reason": "家庭支柱需防范意外导致的身故/伤残，保障家庭经济稳定。",
+          "sum_insured_range": "100万-200万",
+          "priority": "中",
+          "annual_budget": "200-500元"
+        }
+      ],
+      "notes": "1. 重疾险建议消费型，避免储蓄型占用预算；2. 百万医疗险需关注健康告知，如实告知亚健康情况；3. 意外险可选含猝死责任的产品；4. 总保费约4500-7300元，在预算内。"
+    }
+  },
+  {
+    "profile": {
+      "name": "55岁中年",
+      "age": 55,
+      "income": "中",
+      "family": "已婚孩子成年",
+      "health": "有高血压慢性病",
+      "budget": "5000元/年"
+    },
+    "result": {
+      "recommendations": [
+        {
+          "insurance_type": "百万医疗险",
+          "form": "无",
+          "reason": "55岁有高血压，百万医疗险可覆盖大额医疗费用，健康告知需核保，建议选择宽松产品",
+          "sum_insured_range": "100万-400万",
+          "priority": "高",
+          "annual_budget": "1000-2000元"
+        },
+        {
+          "insurance_type": "意外险",
+          "form": "无",
+          "reason": "年龄增长意外风险增加，意外险保费低、杠杆高，无需健康告知",
+          "sum_insured_range": "10万-50万",
+          "priority": "高",
+          "annual_budget": "100-300元"
+        },
+        {
+          "insurance_type": "重疾险",
+          "form": "消费型",
+          "reason": "55岁重疾险保费较高，消费型可降低成本，但需注意保费倒挂风险，建议保额适中",
+          "sum_insured_range": "10万-20万",
+          "priority": "中",
+          "annual_budget": "2000-3000元"
+        }
+      ],
+      "notes": "55岁有高血压，重疾险可能加费或拒保，建议优先配置医疗和意外。若重疾险总保费接近保额，建议放弃重疾，将预算用于提高医疗险或意外险保额。总预算5000元，以上组合约3300-5300元，可微调。"
+    }
+  }
+]

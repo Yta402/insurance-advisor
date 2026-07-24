@@ -1,0 +1,122 @@
+[
+  {
+    "product": "超级玛丽（互联网消费型重疾）",
+    "company": "君龙人寿",
+    "fields": {
+      "form": "消费型",
+      "term": "保至70岁或终身",
+      "ci_payout": "重疾确诊赔付1次，赔付基本保额",
+      "mid_light": "中症赔付60%保额，轻症赔付30%保额，中轻症豁免后续保费",
+      "death": "可选",
+      "waiting_period": "180天",
+      "health_notice": "宽松",
+      "returnable": "否",
+      "key_risk": "身故责任可选，若不含身故则仅退现金价值，可能低于已交保费"
+    }
+  },
+  {
+    "product": "达尔文（互联网消费型重疾）",
+    "company": "瑞华健康",
+    "fields": {
+      "form": "消费型",
+      "term": "保至70岁或终身",
+      "ci_payout": "重疾确诊赔付1次",
+      "mid_light": "含中症与轻症，中轻症豁免保费",
+      "death": "可选",
+      "waiting_period": "180天",
+      "health_notice": "中等",
+      "returnable": "否",
+      "key_risk": "癌症多次赔付间隔期3年较长，需关注"
+    }
+  },
+  {
+    "product": "平安福（储蓄型重疾）",
+    "company": "平安人寿",
+    "fields": {
+      "form": "储蓄型",
+      "term": "终身",
+      "ci_payout": "重疾确诊赔付1次",
+      "mid_light": "含中症轻症",
+      "death": "必选",
+      "waiting_period": "90天",
+      "health_notice": "未提及",
+      "returnable": "否",
+      "key_risk": "身故责任为必选，保费较高，需确认是否满足自身保障需求"
+    }
+  },
+  {
+    "product": "康惠保（消费型重疾）",
+    "company": "百年人寿",
+    "fields": {
+      "form": "消费型",
+      "term": "保至70岁或终身",
+      "ci_payout": "重疾确诊赔付1次",
+      "mid_light": "含中症与轻症，中轻症豁免后续保费",
+      "death": "可选",
+      "waiting_period": "180天",
+      "health_notice": "中等",
+      "returnable": "否",
+      "key_risk": "重疾仅赔付1次，且等待期较长，需注意首次确诊时间"
+    }
+  },
+  {
+    "product": "健康保普惠多倍版（多次赔消费型）",
+    "company": "昆仑健康",
+    "fields": {
+      "form": "消费型",
+      "term": "保至70岁或终身",
+      "ci_payout": "不分组多次赔付，间隔期1年",
+      "mid_light": "含中症轻症",
+      "death": "可选",
+      "waiting_period": "180天",
+      "health_notice": "中等",
+      "returnable": "否",
+      "key_risk": "重疾多次赔付间隔期1年，需关注是否满足间隔要求"
+    }
+  },
+  {
+    "product": "国寿福（储蓄型重疾）",
+    "company": "中国人寿",
+    "fields": {
+      "form": "储蓄型",
+      "term": "终身",
+      "ci_payout": "重疾确诊赔付1次",
+      "mid_light": "含中症轻症",
+      "death": "必选",
+      "waiting_period": "180天",
+      "health_notice": "中等",
+      "returnable": "否",
+      "key_risk": "品牌溢价导致保费较高，性价比可能不如同类产品"
+    }
+  },
+  {
+    "product": "金佑人生（储蓄型含分红）",
+    "company": "太平洋人寿",
+    "fields": {
+      "form": "储蓄型",
+      "term": "终身",
+      "ci_payout": "重疾确诊赔付1次",
+      "mid_light": "未提及",
+      "death": "必选",
+      "waiting_period": "180天",
+      "health_notice": "未提及",
+      "returnable": "否",
+      "key_risk": "分红非保证，前期退保损失大"
+    }
+  },
+  {
+    "product": "某两全返还型重疾（返还型）",
+    "company": "太平人寿",
+    "fields": {
+      "form": "返还型",
+      "term": "至约定年龄（如至70/80岁）",
+      "ci_payout": "重疾确诊赔付1次",
+      "mid_light": "未提及",
+      "death": "含",
+      "waiting_period": "90-180天",
+      "health_notice": "未提及",
+      "returnable": "是",
+      "key_risk": "保费显著高于消费型，保障杠杆低，若中途出险则返还失效"
+    }
+  }
+]

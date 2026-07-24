@@ -12,8 +12,8 @@
       "recommendations": [
         {
           "insurance_type": "百万医疗险",
-          "form": "消费型",
-          "reason": "覆盖大病住院高额医疗费，弥补社保不足，适合亚健康人群",
+          "form": "",
+          "reason": "覆盖大病住院高额医疗费，弥补社保不足，适合亚健康人群应对突发大额支出",
           "sum_insured_range": "200万-400万",
           "priority": "高",
           "annual_budget": "300-800元",
@@ -21,11 +21,21 @@
           "product_match_note": "当前产品库暂无该险种样本，待扩充采集"
         },
         {
+          "insurance_type": "意外险",
+          "form": "",
+          "reason": "家庭支柱需防范意外身故/伤残导致收入中断，含意外医疗报销",
+          "sum_insured_range": "50万-100万",
+          "priority": "高",
+          "annual_budget": "200-500元",
+          "matched_products": [],
+          "product_match_note": "当前产品库暂无该险种样本，待扩充采集"
+        },
+        {
           "insurance_type": "重疾险",
           "form": "消费型",
-          "reason": "确诊即赔，弥补收入损失和康复费用，38岁保费尚可，建议消费型降低预算",
+          "reason": "38岁尚未保费倒挂，消费型重疾险杠杆高，确诊即赔付，弥补收入损失和康复费用",
           "sum_insured_range": "30万-50万",
-          "priority": "高",
+          "priority": "中",
           "annual_budget": "3000-6000元",
           "matched_products": [
             {
@@ -34,12 +44,38 @@
               "form": "储蓄型",
               "death": "必选",
               "waiting_period": "90天",
-              "health_notice": "中等",
-              "key_risk": "身故责任为必选，保费较高，需确认是否覆盖自身需求",
+              "health_notice": "未提及",
+              "key_risk": "身故责任为必选，保费较高，需确认是否满足自身保障需求",
               "service_quality": {
                 "quarter": "2023Q1",
                 "per_premium": 2.11,
                 "level": "中等偏高"
+              }
+            },
+            {
+              "product_name": "国寿福（储蓄型重疾）",
+              "company": "中国人寿",
+              "form": "储蓄型",
+              "death": "必选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "品牌溢价导致保费较高，性价比可能不如同类产品",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "金佑人生（储蓄型含分红）",
+              "company": "太平洋人寿",
+              "form": "储蓄型",
+              "death": "必选",
+              "waiting_period": "180天",
+              "health_notice": "未提及",
+              "key_risk": "分红非保证，前期退保损失大",
+              "service_quality": {
+                "quarter": "2023Q1",
+                "per_premium": 1.35,
+                "level": "接近或低于行业中位数"
               }
             },
             {
@@ -65,21 +101,49 @@
               "service_quality": {
                 "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
               }
+            },
+            {
+              "product_name": "康惠保（消费型重疾）",
+              "company": "百年人寿",
+              "form": "消费型",
+              "death": "可选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "重疾仅赔付1次，且等待期较长，需注意首次确诊时间",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "健康保普惠多倍版（多次赔消费型）",
+              "company": "昆仑健康",
+              "form": "消费型",
+              "death": "可选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "重疾多次赔付间隔期1年，需关注是否满足间隔要求",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "某两全返还型重疾（返还型）",
+              "company": "太平人寿",
+              "form": "返还型",
+              "death": "含",
+              "waiting_period": "90-180天",
+              "health_notice": "未提及",
+              "key_risk": "保费显著高于消费型，保障杠杆低，若中途出险则返还失效",
+              "service_quality": {
+                "quarter": "2023Q1",
+                "per_premium": 1.29,
+                "level": "接近或低于行业中位数"
+              }
             }
           ]
-        },
-        {
-          "insurance_type": "意外险",
-          "form": "消费型",
-          "reason": "应对意外身故/伤残风险，家庭支柱必备，杠杆高",
-          "sum_insured_range": "100万-200万",
-          "priority": "中",
-          "annual_budget": "200-500元",
-          "matched_products": [],
-          "product_match_note": "当前产品库暂无该险种样本，待扩充采集"
         }
       ],
-      "notes": "总预算约3500-7300元，剩余预算可考虑提高重疾保额或附加医疗特需。亚健康注意百万医疗险健康告知，重疾险可能加费或除外，建议如实告知。",
+      "notes": "亚健康体况可能影响重疾险核保，建议优先配置医疗险和意外险；重疾险可考虑消费型以控制预算，总保费控制在1万元内。",
       "_validation_warnings": [],
       "_disclaimer": "本输出仅为信息呈现与对比，不构成投保建议；健康告知需如实向保险公司申报，投保决策由用户自行作出。"
     }
@@ -98,7 +162,7 @@
         {
           "insurance_type": "百万医疗险",
           "form": "无",
-          "reason": "55岁有高血压，百万医疗险可覆盖大额医疗费用，健康告知可能除外高血压相关治疗，但其他疾病仍可保障。",
+          "reason": "年龄较大且存在高血压，百万医疗险可覆盖大额医疗费用，建议选择健康告知宽松或可智能核保的产品",
           "sum_insured_range": "100万-400万",
           "priority": "高",
           "annual_budget": "1000-2000元",
@@ -108,15 +172,127 @@
         {
           "insurance_type": "意外险",
           "form": "无",
-          "reason": "年龄增长，意外风险增加，意外险保费低、杠杆高，无需健康告知。",
-          "sum_insured_range": "10万-50万",
+          "reason": "意外风险随年龄增加，意外险保费低、杠杆高，无需健康告知，适合补充意外医疗和身故保障",
+          "sum_insured_range": "10万-30万",
           "priority": "高",
           "annual_budget": "200-500元",
           "matched_products": [],
           "product_match_note": "当前产品库暂无该险种样本，待扩充采集"
+        },
+        {
+          "insurance_type": "重疾险",
+          "form": "消费型",
+          "reason": "55岁投保重疾险保费较高，但若预算允许，消费型重疾险可提供特定疾病保障，需注意保费倒挂风险",
+          "sum_insured_range": "10万-20万",
+          "priority": "中",
+          "annual_budget": "2000-3000元",
+          "matched_products": [
+            {
+              "product_name": "平安福（储蓄型重疾）",
+              "company": "平安人寿",
+              "form": "储蓄型",
+              "death": "必选",
+              "waiting_period": "90天",
+              "health_notice": "未提及",
+              "key_risk": "身故责任为必选，保费较高，需确认是否满足自身保障需求",
+              "service_quality": {
+                "quarter": "2023Q1",
+                "per_premium": 2.11,
+                "level": "中等偏高"
+              }
+            },
+            {
+              "product_name": "国寿福（储蓄型重疾）",
+              "company": "中国人寿",
+              "form": "储蓄型",
+              "death": "必选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "品牌溢价导致保费较高，性价比可能不如同类产品",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "金佑人生（储蓄型含分红）",
+              "company": "太平洋人寿",
+              "form": "储蓄型",
+              "death": "必选",
+              "waiting_period": "180天",
+              "health_notice": "未提及",
+              "key_risk": "分红非保证，前期退保损失大",
+              "service_quality": {
+                "quarter": "2023Q1",
+                "per_premium": 1.35,
+                "level": "接近或低于行业中位数"
+              }
+            },
+            {
+              "product_name": "超级玛丽（互联网消费型重疾）",
+              "company": "君龙人寿",
+              "form": "消费型",
+              "death": "可选",
+              "waiting_period": "180天",
+              "health_notice": "宽松",
+              "key_risk": "身故责任可选，若不含身故则仅退现金价值，可能低于已交保费",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "达尔文（互联网消费型重疾）",
+              "company": "瑞华健康",
+              "form": "消费型",
+              "death": "可选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "癌症多次赔付间隔期3年较长，需关注",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "康惠保（消费型重疾）",
+              "company": "百年人寿",
+              "form": "消费型",
+              "death": "可选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "重疾仅赔付1次，且等待期较长，需注意首次确诊时间",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "健康保普惠多倍版（多次赔消费型）",
+              "company": "昆仑健康",
+              "form": "消费型",
+              "death": "可选",
+              "waiting_period": "180天",
+              "health_notice": "中等",
+              "key_risk": "重疾多次赔付间隔期1年，需关注是否满足间隔要求",
+              "service_quality": {
+                "note": "该公司未在监管投诉通报上榜（通报仅列投诉较高的前若干家，非全市场；未上榜不等于无投诉）"
+              }
+            },
+            {
+              "product_name": "某两全返还型重疾（返还型）",
+              "company": "太平人寿",
+              "form": "返还型",
+              "death": "含",
+              "waiting_period": "90-180天",
+              "health_notice": "未提及",
+              "key_risk": "保费显著高于消费型，保障杠杆低，若中途出险则返还失效",
+              "service_quality": {
+                "quarter": "2023Q1",
+                "per_premium": 1.29,
+                "level": "接近或低于行业中位数"
+              }
+            }
+          ]
         }
       ],
-      "notes": "55岁有高血压，重疾险保费可能倒挂，不建议配置。医疗险需注意健康告知，选择可承保慢性病的产品。总预算5000元，以上组合约1500-2500元，剩余预算可考虑提高保额或增加门诊医疗。",
+      "notes": "1. 55岁投保重疾险需仔细计算总保费是否接近保额，若保费倒挂则不建议购买，优先配置医疗和意外险。2. 高血压慢性病可能影响百万医疗险的核保，建议选择健康告知宽松的产品或尝试智能核保。3. 总预算5000元/年，上述组合可控制在预算内，但重疾险部分需根据实际保费调整。",
       "_validation_warnings": [],
       "_disclaimer": "本输出仅为信息呈现与对比，不构成投保建议；健康告知需如实向保险公司申报，投保决策由用户自行作出。"
     }

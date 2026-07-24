@@ -1,0 +1,50 @@
+[
+  {
+    "product": "超级玛丽（互联网消费型重疾）",
+    "company": "君龙人寿",
+    "form": "消费型",
+    "linked": true
+  },
+  {
+    "product": "达尔文（互联网消费型重疾）",
+    "company": "瑞华健康",
+    "form": "消费型",
+    "linked": false
+  },
+  {
+    "product": "平安福（储蓄型重疾）",
+    "company": "平安人寿",
+    "form": "储蓄型",
+    "linked": true
+  },
+  {
+    "product": "康惠保（消费型重疾）",
+    "company": "百年人寿",
+    "form": "消费型",
+    "linked": true
+  },
+  {
+    "product": "健康保普惠多倍版（多次赔消费型）",
+    "company": "昆仑健康",
+    "form": "消费型",
+    "linked": true
+  },
+  {
+    "product": "国寿福（储蓄型重疾）",
+    "company": "中国人寿",
+    "form": "储蓄型",
+    "linked": true
+  },
+  {
+    "product": "金佑人生（储蓄型含分红）",
+    "company": "太平洋人寿",
+    "form": "储蓄型",
+    "linked": true
+  },
+  {
+    "product": "某两全返还型重疾（返还型）",
+    "company": "太平人寿",
+    "form": "返还型",
+    "linked": true
+  }
+]
